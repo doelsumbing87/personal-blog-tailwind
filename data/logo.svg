@@ -1,52 +1,117 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" 
-     xmlns="http://www.w3.org/2000/svg" 
-     xmlns:xlink="http://www.w3.org/1999/xlink" 
-     preserveAspectRatio="xMidYMid meet" 
-     viewBox="344.5639097744361 330.27819548872174 111.73684210526318 91.21804511278197" 
-     width="53.87" height="43.61">
-
-  <!-- Define gradient -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 300 300"
+     width="100%" height="100%">
   <defs>
-    <linearGradient id="grad1" gradientUnits="userSpaceOnUse" x1="344.56" y1="330.28" x2="456.30" y2="421.50">
-      <stop offset="0%" style="stop-color:#1ECBE1; stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0083FF; stop-opacity:1" />
+    <!-- Linear Gradient -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1ECBE1" />
+      <stop offset="50%" stop-color="#00ADFF" />
+      <stop offset="100%" stop-color="#8A2BE2" />
     </linearGradient>
+
+    <!-- Radial Gradient -->
+    <radialGradient id="grad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="rgba(30, 203, 225, 0.7)" />
+      <stop offset="100%" stop-color="rgba(0, 131, 255, 0)" />
+    </radialGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Styles -->
+    <style type="text/css">
+      .textStyle {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 32px;
+        fill: url(#grad1);
+        text-anchor: middle;
+        dominant-baseline: middle;
+        filter: url(#glow);
+      }
+      .hexagon-stroke {
+        stroke: url(#grad1);
+        stroke-width: 8;
+        stroke-linejoin: round;
+        filter: url(#glow);
+      }
+      .network-line {
+        stroke: url(#grad1);
+        stroke-width: 2.5;
+        opacity: 0.6;
+        animation: linePulse 2s infinite alternate;
+      }
+      .a-shape-stroke {
+        stroke: url(#grad1);
+        stroke-width: 6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: url(#glow);
+        fill: none;
+        animation: aFadeIn 3s ease-out forwards;
+      }
+      .a-crossbar {
+        stroke: url(#grad1);
+        stroke-width: 6;
+        animation: crossbarPulse 2.5s infinite alternate;
+      }
+      @keyframes linePulse {
+        0% { opacity: 0.4; stroke-width: 1.5; }
+        100% { opacity: 0.8; stroke-width: 3; }
+      }
+      @keyframes aFadeIn {
+        0% { stroke-dasharray: 0 500; }
+        100% { stroke-dasharray: 500 0; }
+      }
+      @keyframes crossbarPulse {
+        0% { stroke-opacity: 0.7; }
+        50% { stroke-opacity: 1; }
+        100% { stroke-opacity: 0.7; }
+      }
+    </style>
   </defs>
 
-  <!-- Hexagon Shape (blockchain) -->
-  <polygon 
-    points="
-      400,335
-      450,360
-      450,390
-      400,415
-      350,390
-      350,360
-    " 
-    fill="none" 
-    stroke="url(#grad1)" 
-    stroke-width="4"/>
+  <!-- Radial glow background -->
+  <circle cx="150" cy="150" r="120" fill="url(#grad2)" opacity="0.3" />
 
-  <!-- Neural Nodes -->
-  <circle cx="400" cy="335" r="5" fill="url(#grad1)"/>
-  <circle cx="450" cy="360" r="5" fill="url(#grad1)"/>
-  <circle cx="450" cy="390" r="5" fill="url(#grad1)"/>
-  <circle cx="400" cy="415" r="5" fill="url(#grad1)"/>
-  <circle cx="350" cy="390" r="5" fill="url(#grad1)"/>
-  <circle cx="350" cy="360" r="5" fill="url(#grad1)"/>
+  <!-- Abstract Hexagon Shape -->
+  <polygon points="
+    150,30
+    220,70
+    240,140
+    180,230
+    120,230
+    60,140
+    80,70
+  " class="hexagon-stroke" fill="none" />
 
-  <!-- Connecting Lines -->
-  <line x1="400" y1="335" x2="450" y2="360" stroke="url(#grad1)" stroke-width="2"/>
-  <line x1="450" y1="360" x2="450" y2="390" stroke="url(#grad1)" stroke-width="2"/>
-  <line x1="450" y1="390" x2="400" y2="415" stroke="url(#grad1)" stroke-width="2"/>
-  <line x1="400" y1="415" x2="350" y2="390" stroke="url(#grad1)" stroke-width="2"/>
-  <line x1="350" y1="390" x2="350" y2="360" stroke="url(#grad1)" stroke-width="2"/>
-  <line x1="350" y1="360" x2="400" y2="335" stroke="url(#grad1)" stroke-width="2"/>
+  <!-- Network Lines -->
+  <line x1="150" y1="30" x2="180" y2="230" class="network-line" />
+  <line x1="150" y1="30" x2="120" y2="230" class="network-line" />
+  <line x1="60" y1="140" x2="240" y2="140" class="network-line" />
+  <line x1="80" y1="70" x2="220" y2="70" class="network-line" />
+  <line x1="60" y1="140" x2="150" y2="30" class="network-line" />
+  <line x1="240" y1="140" x2="150" y2="30" class="network-line" />
+  <line x1="120" y1="230" x2="220" y2="70" class="network-line" />
+  <line x1="180" y1="230" x2="80" y2="70" class="network-line" />
 
-  <!-- Text: Bey Labs -->
-  <text x="400" y="380" font-size="16" text-anchor="middle" fill="url(#grad1)" font-family="Arial, Helvetica, sans-serif" font-weight="bold">
-    Abbeey Labs
-  </text>
+  <!-- Abstract "A" Shape -->
+  <path d="
+    M 150 80
+    L 170 180
+    L 150 160
+    L 130 180
+    Z
+  " class="a-shape-stroke" />
+
+  <!-- Crossbar of the "A" -->
+  <line x1="140" y1="140" x2="160" y2="140" class="a-crossbar" />
+
+  <!-- Text Label -->
+  <text x="150" y="260" class="textStyle">Abbeey Labs</text>
 </svg>
