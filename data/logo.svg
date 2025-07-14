@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 300 300"
-     width="100%" height="100%">
+     viewBox="50 30 200 240"
+     width="53.87" height="43.61">
   <defs>
     <!-- Linear Gradient -->
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -8,12 +8,6 @@
       <stop offset="50%" stop-color="#00ADFF" />
       <stop offset="100%" stop-color="#8A2BE2" />
     </linearGradient>
-
-    <!-- Radial Gradient -->
-    <radialGradient id="grad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-      <stop offset="0%" stop-color="rgba(30, 203, 225, 0.3)" />
-      <stop offset="100%" stop-color="rgba(0, 131, 255, 0)" />
-    </radialGradient>
 
     <style type="text/css">
       .textStyle {
@@ -48,10 +42,7 @@
     </style>
   </defs>
 
-  <!-- Radial glow background -->
-  <circle cx="150" cy="150" r="120" fill="url(#grad2)" />
-
-  <!-- Abstract Hexagon Shape -->
+  <!-- Hexagon Shape -->
   <polygon points="
     150,30
     220,70
@@ -84,6 +75,6 @@
   <!-- Crossbar of the "A" -->
   <line x1="140" y1="140" x2="160" y2="140" class="a-crossbar" />
 
-  <!-- Text Label -->
+  <!-- Text -->
   <text x="150" y="260" class="textStyle">Abbeey Labs</text>
 </svg>
