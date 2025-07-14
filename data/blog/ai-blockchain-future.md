@@ -5,13 +5,13 @@ lastmod: "2025-07-15"
 tags: ["AI", "Prompt Engineering", "Blockchain", "Crypto", "Web3"]
 draft: false
 summary: "Explore how AI prompt engineering and blockchain are converging to redefine automation, security, and digital trust. Insights from Abbeey Labs on the synergy powering the decentralized future."
-images: ["public/static/images/twitter-card.png"]
+images: ["/static/images/twitter-card.png"]
 authors: ["default"]
 layout: PostLayout
 canonicalUrl: https://yourdomain.com/blog/ai-blockchain-future
 ---
 
-![Abbeey Labs Banner](public/static/images/twitter-card.png)
+![Abbeey Labs Banner](/static/images/twitter-card.png)
 
 # AI Prompt Engineering and Blockchain: The Future of Decentralized Intelligence
 
